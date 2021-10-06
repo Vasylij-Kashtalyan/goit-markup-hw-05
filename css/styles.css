@@ -85,6 +85,7 @@ a {
   color: var(--link-text-color);
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms ease;
 }
 .header {
   max-width: 1600px;
@@ -152,6 +153,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 250ms ease;
 }
 .info-title:hover,
 .info-title:focus {
@@ -234,6 +236,7 @@ a {
   padding-bottom: 10px;
   padding-right: 32px;
   padding-left: 32px;
+  transition: background-color 250ms ease;
 }
 
 /* Особенности */
@@ -280,7 +283,7 @@ a {
   height: 70%;
 }
 
-/*  Чем мы занимаемся  */
+/*  ------------Чем мы занимаемся-----------  */
 .section-works {
   padding-top: 0;
 }
@@ -300,7 +303,30 @@ a {
 .works-item:not(:last-child) {
   margin-right: 30px;
 }
-/* Наша команда */
+.works-item-container {
+  position: relative;
+  overflow: hidden;
+}
+.works-item-text {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
+}
+/* -------------Наша команда------------ */
 .sectio-team {
   background-color: var(--filters-background);
 }
@@ -387,6 +413,13 @@ a {
   height: 20px;
   fill: #afb1b8;
 }
+.icon-link {
+  transition: background-color 250ms ease;
+}
+.icon-team {
+  transition: fill 250ms ease;
+}
+
 /* --------------Постоянные клиенты------------ */
 .customers-title {
   font-family: inherit;
@@ -435,6 +468,9 @@ a {
 .customers-link:focus {
   fill: var(--accent-color);
 }
+.customers-link {
+  transition: fill 250ms ease;
+}
 /* ---------------Футер ------------- */
 .footer {
   padding-top: 60px;
@@ -479,6 +515,13 @@ a {
 .footer-info-title:hover,
 .footer-info-title:focus {
   color: var(--accent-color);
+}
+.footer-info-title,
+.map {
+  transition: color 250ms ease;
+}
+.footer-icon-link {
+  transition: background-color 250ms ease;
 }
 /* --------------присоединайтесь------------ */
 .footer-social-join {
@@ -574,6 +617,8 @@ a {
   padding-bottom: 6px;
   padding-right: 22px;
   padding-left: 22px;
+
+  transition: background-color 250ms ease;
 }
 
 /* --------------------Проекты------------ */
@@ -639,4 +684,71 @@ a {
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.project-link-container {
+  position: relative;
+  overflow: hidden;
+}
+.overley-project {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  transform: translateY(101%);
+  transition: 250ms ease;
+}
+.project-link-text {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: rgba(33, 150, 243, 0.9);
+}
+.project-link:hover .overley-project,
+.project-link:focus .overley-project {
+  transform: translateY(0);
+}
+
+/* -----------Модальное окно------------- */
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(59, 221, 26, 0.2);
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: relative;
+  background-color: #ffffff;
+  width: 528px;
+  height: 581px;
+  border-radius: 10px;
+}
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #000000;
 }
