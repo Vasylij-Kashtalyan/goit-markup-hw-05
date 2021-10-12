@@ -473,9 +473,38 @@
   <!-- -----------Модальное окно------------- -->
   <div class="backdrop is-hidden" data-modal>
     <div class="modal">
-      <p></p>
+      
+      <form class="modal-form">
+        <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+        <div class="form-container">
+          
+          <label class="modal-label">Имя
+          <input class="modal-input" type="text">
+          </label>
+
+          <label class="modal-label">Телефон
+          <input class="modal-input" type="tel">
+          </label>
+
+          <label class="modal-label">Почта
+          <input class="modal-input" type="mail">
+          </label>
+
+          <label class="modal-label">Комментарий
+          <textarea  rows="10"></textarea>
+          </label>
+        </div>
+
+        <label class="modal-check">
+         <input class="checkbox" type="checkbox" >
+         Соглашаюсь с рассылкой и принимаю  <a href="">Условия договора</a>
+        </label>
+
+        <button class="modal-button">Отправить</button>
+      </form>
+      
       <button class="modal-close" data-modal-close>
-        <svg class=""  width="18" heigth="18">
+        <svg class=""  width="18">
           <use href="./images/icons.svg.svg#icon-close"></use>
         </svg>
       </button>
